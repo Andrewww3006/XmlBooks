@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
+@XmlRootElement
 public class Main {
 
     public static void main(String[] args) throws JAXBException {
@@ -18,7 +18,8 @@ public class Main {
         book1.setName("War and peace");
         book1.setDate("1912");
         List<Book> bookList = new ArrayList<>();
-        book1.setBookList(bookList);
+        bookList.add(book1);
+        //book1.setBookList(bookList);
 
 
 
@@ -26,8 +27,8 @@ public class Main {
         JAXBContext context = JAXBContext.newInstance(Book.class);
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        marshaller.marshal(book1.getBookList(),file);
-        marshaller.marshal(book1.getBookList(),System.out);
+        marshaller.marshal(bookList,file);
+        //marshaller.marshal(book1,System.out);
 
     }
 }

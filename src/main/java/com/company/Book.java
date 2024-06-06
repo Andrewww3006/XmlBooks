@@ -5,7 +5,6 @@ import jakarta.xml.bind.annotation.XmlType;
 
 import java.util.List;
 
-
 @XmlRootElement
 public class Book {
     private String articule;
