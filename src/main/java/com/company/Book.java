@@ -14,7 +14,7 @@ public class Book {
     public String getArticule() {
         return articule;
     }
-@XmlElement
+
     public void setArticule(String articule) {
         this.articule = articule;
     }
@@ -22,7 +22,7 @@ public class Book {
     public String getName() {
         return name;
     }
-@XmlElement
+
     public void setName(String name) {
         this.name = name;
     }
@@ -30,7 +30,7 @@ public class Book {
     public String getDate() {
         return date;
     }
-@XmlElement
+
     public void setDate(String date) {
         this.date = date;
     }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<book>
+    <bookList>
+        <articule>52290</articule>
+        <date>1912</date>
+        <name>War and peace</name>
+    </bookList>
+    <bookList>
+        <articule>52291</articule>
+        <date>1915</date>
+        <name>Idiot</name>
+    </bookList>
+</book>
