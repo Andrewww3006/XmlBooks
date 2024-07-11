@@ -6,12 +6,13 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 @XmlRootElement
 public class Main {
 
-    public static void main(String[] args) throws JAXBException {
+    public static void main(String[] args) throws JAXBException, IOException {
 	// write your code here
 
         Book book1 = new Book();
@@ -30,12 +31,21 @@ public class Main {
         Book romans = new Book();
         romans.setBookList(bookList);
 
+for (Book x: romans.getBookList())
+    System.out.println(x.getName());;
+
         File file = new File("xmlExample.xml");
         JAXBContext context = JAXBContext.newInstance(Book.class);
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         marshaller.marshal(romans,file);
-        marshaller.marshal(book1,System.out);
+        marshaller.marshal(romans,System.out);
+
+        Converter converter = new Converter();
+        converter.toJSON(romans);
+        System.out.println(converter.toObject());
+
+
 
     }
 }
